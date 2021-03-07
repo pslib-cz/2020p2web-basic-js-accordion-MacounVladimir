@@ -225,6 +225,40 @@
             </div>
         </footer>
     </div>
+
+
+    <!--js-->
+    <script>
+        /*Metody pro nalezení kolekce HTML elementů*/ 
+        var prvky = document.getElementsByClassName("vypujcka-item") //v celém dokumentu
+        console.log(prvky);
+
+        var detail = document.getElementsByClassName("detail-vypujcky-container")
+        console.log(detail)
+        
+        /*Procházení kolekce HTML elementů (ekvivalent c# foreach)*/
+        for (let i = 0; i < prvky.length; i++) {
+            let inp = prvky[i].querySelector("input")
+            console.log(inp)
+            inp.onclick = () => {
+                if(inp.checked) {
+                    detail[i].style.height = detail[i].scrollHeight + "px";
+                }
+                else {
+                    detail[i].style.height = "0px"
+                }
+
+            }
+        }
+
+        /*Navázání funkce na událost elementu "click" prvky[2].getElementsByClassName("detail-vypujcky-container")
+        [0].style.display = "block"*/
+        /*prvek.onclick = (e) => { 
+        /* do it after click */
+        
+        //}
+        
+    </script>
 </body>
 
 </html>
